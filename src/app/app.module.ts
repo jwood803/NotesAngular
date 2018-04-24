@@ -6,7 +6,8 @@ import { NotesListComponent } from './notes-list/notes-list.component';
 import { AddNoteComponent } from './add-note/add-note.component';
 import {NotesListService} from './notes-list/notes-list.service';
 import {HttpClientModule} from '@angular/common/http';
-
+import { RouterModule } from '@angular/router';
+import {appRoutes} from './app.routes';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [NotesListService],
   bootstrap: [AppComponent]
