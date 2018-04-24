@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {NotesListService} from './notes-list.service';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {DeleteNoteComponent} from '../delete-note/delete-note.component';
 
 @Component({
   selector: 'app-notes-list',
@@ -11,7 +9,7 @@ import {DeleteNoteComponent} from '../delete-note/delete-note.component';
 export class NotesListComponent implements OnInit {
   notes = [];
 
-  constructor(private notesListService: NotesListService, private modalService: NgbModal) {}
+  constructor(private notesListService: NotesListService) {}
 
   ngOnInit() {
     this.notesListService.getNotes()
