@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NotesListService} from './notes-list.service';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {DeleteNoteComponent} from '../delete-note/delete-note.component';
 
 @Component({
   selector: 'app-notes-list',
@@ -9,16 +11,14 @@ import {NotesListService} from './notes-list.service';
 export class NotesListComponent implements OnInit {
   notes = [];
 
-  constructor(private notesListService: NotesListService) {}
+  constructor(private notesListService: NotesListService, private modalService: NgbModal) {}
 
   ngOnInit() {
     this.notesListService.getNotes()
       .subscribe(
-        (data) => {
-          this.notes = data;
-          console.log(data);
-        },
+        (data) => this.notes = data,
         (error) => console.log(error)
       );
   }
+
 }

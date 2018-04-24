@@ -8,12 +8,14 @@ import {NotesListService} from './notes-list/notes-list.service';
 import {HttpClientModule} from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import {appRoutes} from './app.routes';
+import { DeleteNoteComponent } from './delete-note/delete-note.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotesListComponent,
-    AddNoteComponent
+    AddNoteComponent,
+    DeleteNoteComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +24,7 @@ import {appRoutes} from './app.routes';
     RouterModule.forRoot(appRoutes),
   ],
   providers: [NotesListService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DeleteNoteComponent]
 })
 export class AppModule { }
